@@ -18,14 +18,14 @@ export class AppComponent {
     const idr = 14000 * value
     const strIDR = idr.toString()
     if(strIDR.indexOf('.') > 0) {
-      const leftSide = strIDR.substring(0, strIDR.indexOf('.'))
-      const rightSide = strIDR.substring(strIDR.indexOf('.'))
-      const leftValue = this.formatNumber(leftSide).replace('.', ',')
+      const lenIndex = strIDR.indexOf('.')
+      const leftSide = strIDR.substring(0, lenIndex)
+      const rightSide = strIDR.substring(lenIndex).replace('.', ',')
+      const leftValue = this.formatNumber(leftSide)
       this.idr = leftValue + rightSide
     } else {
       this.idr = this.formatNumber(idr.toString())
     }
-    
   }
 
   formatNumber(n) {

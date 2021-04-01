@@ -16,8 +16,7 @@
     Nilai harus di isi
   </p>
 </span>
-<label *ngIf="!disabled">
+<div *ngIf="!disabled">
     <input
     type="checkbox"[(ngModel)]="boolDesimal" (ngModelChange)="onChangeBoolDesimal($event)" > Support Desimal
-
-</label>
+</div>

@@ -44,13 +44,15 @@
         <app-input-convert [currency]="currency"></app-input-convert>
       </div>
       <div *ngSwitchCase="'nomor2'">
-        <div style="width: 100%;">
-          <div style="display: inline-block;width: 50%">
+        <div style="width: 100%;" class="border-group">
+          <div style="display: inline-block; float: left;">
+            <label>USD</label>
             <app-input-convert 
               [currency]="dollar"
               (changeCurrency)="changeToDollar($event)"></app-input-convert>
           </div>
-          <div class="display: inline-block; width: 50%">
+          <div style="display: inline-block; float: left">
+            <label> = IDR</label>
             <app-input-convert 
               [currency]="idr" 
               [disabled]=true></app-input-convert>

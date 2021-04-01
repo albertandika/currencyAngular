@@ -1,0 +1,23 @@
+<input type="text" 
+    minlength="1"
+    class="currency-input"
+    [(ngModel)]="currency"
+    required
+    [disabled]="disabled"
+    (ngModelChange)="onChangeCurrency($event)" 
+    (paste)="onlyPaste($event)"
+    (keypress)="onlyNumeric($event)"
+    [ngClass]="{'danger-border': !currency && !disabled}"
+    />
+
+<span *ngIf="!currency && !disabled "
+    class="alert-danger">
+  <p >
+    Nilai harus di isi
+  </p>
+</span>
+<label *ngIf="!disabled">
+    <input
+    type="checkbox"[(ngModel)]="boolDesimal" (ngModelChange)="onChangeBoolDesimal($event)" > Support Desimal
+
+</label>
